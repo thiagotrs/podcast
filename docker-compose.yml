@@ -1,0 +1,14 @@
+version: '3'
+services:
+  node-dev:
+    container_name: node-compose
+    image: node:latest
+    volumes:
+      - .:/home/app
+    working_dir: "/home/app"
+    tty: true
+    stdin_open: true
+    ports:
+      - '4000:4000'
+      - '3000:3000'
+    user: "node"
